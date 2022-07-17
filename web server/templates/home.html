@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <form name="passdata" action='{{ url_for('disp') }}' method="POST">
+              <label for="width">Width:<br>
+                <input id="width" type="number" name="width">
+              </label><br>
+              <label for="length">Length:<br>
+                <input id="length" type="number" name="length">
+              </label><br>
+              <label for="time">Time:<br>
+                <input id="time" type="number" name="time">
+              </label><br>
+              <input type="submit" value="Send">
+        </form>  
+        <form action={{ url_for('move') }}>
+         <input type="submit" value="Move"> 
+         </form>     
+    
+    </body>
+</html>

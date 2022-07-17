@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Move</title>
+    </head>
+    <script>
+    function sendData(data){
+        var d = data;
+        document.getElementById("demo").innerHTML = d;
+        fetch('/move/request', {
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(d),
+            cache: "no-cache",
+            headers: new Headers({"content-type": "application/json"})
+        })
+        }
+    </script>
+
+    <body>
+        <button type="button" onclick="sendData('LEFT')">Left</button>
+        <button type="button" onclick="sendData('RIGHT')">Right</button>
+        <button type="button" onclick="sendData('DOWN')">Down</button>
+        <button type="button" onclick="sendData('UP')">Up</button>
+        <p id="demo"></p>
+        
+        <form action="/">
+         <input type="submit" value="Home"> 
+        </form>
+    
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+         {% for key, value in result.items() %}
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+         {% endfor %}
+      </table>
+      <br>
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                  {{ message }}
+              {% endfor %}
+          {% endif %}
+      {% endwith %}    
+      <br>        
+        Width is {{w}} <br>
+        Length is {{l}} <br>
+        Time is {{t}}                                  
+   </body>
+</html>
